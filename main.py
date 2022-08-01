@@ -34,14 +34,14 @@ app = FastAPI()
 scraper = Scraper("https://www.qe.com.qa/wp/mws/tabs/tab1")
 
 
-@app.get("/")
+@app.get("/stocks/")
 async def stocks():
     response_data = await scraper.scrape()
     return {"data": response_data}
             
 
-import uvicorn
+# import uvicorn
 
-if __name__ == "__main__":
-  uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+# if __name__ == "__main__":
+#   uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
 
