@@ -14,7 +14,7 @@ class Scraper:
         session = AsyncHTMLSession()
         response = await session.get(self.url)
 
-        await response.html.arender(timeout=10)
+        await response.html.arender(timeout=40)
         page = response.html.html
 
         soup = bs(page, 'html.parser')
